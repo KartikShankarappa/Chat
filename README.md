@@ -1,0 +1,11 @@
+* This is a chat application.
+    - There are two important classes.  The [BlockingChatter](src/main/java/com/kartik/chat/BlockingChatter.java) and [NonBlockingChatter](src/main/java/com/kartik/chat/NonBlockingChatter.java)
+        - The `BlockingChatter` will use blocking IO
+        - The `NonBlockingChatter` will use non-blocking IO
+    - Additionally, this program contails an "Easter Egg".  Whenever the `BlockingChatter` reads the value `java` from the server it would send back a random line of text from the book [Moby Dick](src/main/resources/Moby%20Dick.txt)
+    - To test if it works, in three separate terminal tabs/windows run the following:
+        - Run [ChatServer](src/main/java/com/kartik/chat/ChatServer.java)
+        - Run [Chat](src/main/java/com/kartik/chat/Chat.java) passing in `blocking`.
+        - Run [Chat](src/main/java/com/kartik/chat/Chat.java) passing in `nonblocking`.
+        - You should be able to enter text in one tab/window and see it appear in the other (and echoed by the server).
+        - To ensure the Easter Egg works, when the `nonblocking` client types `java` it should then be greated with a random line of text from the book `Moby Dick`. As the `blocking` client will read `java` from the server and then send back the random line of text.
